@@ -6,8 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Media Page</title>
+    <link href="{% static 'css/style/socialMedia.css' %}" rel="stylesheet" />
   </head>
   <body>
-    <div><p>This is a Social Media Page.</p></div>
+    <header>
+      <div class="logo"><h1>This is social media page.</h1></div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Function1</a>
+            <a href="#">Function2</a>
+            <a href="#">Function3</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="top">
+        <div class="left">
+          <div class="switch">switch button</div>
+          <h1>Recent News</h1>
+        </div>
+        <div class="right">
+          <h2>Administration for writer (create/modify/delete)</h2>
+        </div>
+      </section>
+      <section class="newList">
+        <table>
+          <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Keyword</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>First new</td>
+            <td>This is the first new.</td>
+            <td>2022/05/31</td>
+          </tr>
+        </table>
+      </section>
+    </main>
   </body>
 </html>
