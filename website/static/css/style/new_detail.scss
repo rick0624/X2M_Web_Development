@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 20vh;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    background-color: gray;
+  }
+  nav {
+    ul {
+      li {
+        a {
+          padding: 1rem;
+          font-size: larger;
+        }
+      }
+    }
+  }
+}
+
+main {
+  div.all-content {
+    display: flex;
+    margin: 10px;
+    div.new-content {
+      section.new {
+        div.newsContent {
+          p {
+            padding: 10px 0px;
+          }
+        }
+      }
+    }
+
+    section.complementary {
+      //   width: 10vw;
+      background-color: aquamarine;
+      //   color: rgb(177, 24, 24);
+    }
+  }
+}
