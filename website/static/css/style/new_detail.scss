@@ -28,7 +28,7 @@ header {
 main {
   div.all-content {
     display: flex;
-    margin: 10px;
+    margin: 0rem -3rem;
     div.new-content {
       section.new {
         div.newsContent {
@@ -43,6 +43,23 @@ main {
       //   width: 10vw;
       background-color: aquamarine;
       //   color: rgb(177, 24, 24);
+      article {
+        margin: 2rem 0.25rem;
+        background-color: bisque;
+        div.newBody {
+          padding: 1rem;
+          div.date {
+            margin: 1rem;
+            // background-color: blueviolet;
+          }
+          div.title {
+            margin: 0.5rem 1rem 0rem 1rem;
+          }
+          div.keyword {
+            margin: 0rem 1rem 1rem 1rem;
+          }
+        }
+      }
     }
   }
 }

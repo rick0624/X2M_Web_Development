@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 20vh;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    background-color: gray;
+  }
+  nav {
+    ul {
+      li {
+        a {
+          padding: 1rem;
+          font-size: larger;
+        }
+      }
+    }
+  }
+}
+
+div.form {
+  background-color: aquamarine;
+  //   P {
+  //     margin: 2rem;
+  //   }
+  .post-form textarea,
+  .post-form input {
+    width: 50vw;
+  }
+
+  form.post-form {
+    // background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

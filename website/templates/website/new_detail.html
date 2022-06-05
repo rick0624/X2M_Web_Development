@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Media Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link href="{% static 'css/style/new_detail.css' %}" rel="stylesheet" />
   </head>
   <body>
@@ -22,6 +28,8 @@
         </ul>
       </nav>
     </header>
+    <!-- <a href="#" class="goBack">點擊回到新聞主頁面</a> -->
+    <a href="{% url 'socialMedia'%}" class="goBack">點擊回到新聞主頁面</a>
     <a
       href="https://www.eettaiwan.com/20220523ta71-artificial-intelligence-on-the-edge/"
       >real website</a
@@ -30,77 +38,38 @@
     <p>{{ new.content }}</p>
 
     <main>
-      <div class="all-content">
-        <div class="new-content">
-          <section class="new">
-            {% if new.published_date %}
-            <time class="date"> {{ new.published_date }} </time>
-            {% endif %}
-            <h2>{{ new.title }}</h2>
-            <p>{{ new.keyword|linebreaksbr }}</p>
-            <div class="newsContent">
-              <!-- <p>{{ new.content }}</p> -->
-              <p>
-                當我們涉入科幻世界時，人工智慧和機器學習(AI/ML)的概念讓人聯想到Neo、Trinity和Morpheus在駭客任務這部電影中與機器戰爭的景象。
-              </p>
-              <p>
-                然而，在現實生活中，AI/ML可幫助開發人員創建更好、成本更低的物聯網(IoT)終端節點，使他們的產品生態系統受益。AI/ML的好處不僅是單純地在終端節點做出更好的決策；一些最佳化也為所有相關人員帶來珍貴的利益，包括消費者、開發人員和營運商。
-              </p>
-              <p>
-                <span style="font-size: 14pt"><strong>AI和ML</strong></span>
-              </p>
-              <p>
-                AI/ML並非一個新概念，傳統上它的存在是為了提供許多用戶可同時共用耗電且更昂貴的平台。由於科技業日漸依賴資料的儲存和運算能力，資本和營運成本不斷上升，在集中式資料中心開始建構和使用後，提供了科技業足以負擔的財務支出。因為這種資料中心現象讓技術部門能夠共用伺服器、公用事業、冷卻、不動產和安全。此外，它還提供可根據需求擴展和縮減資源的功能，例如所需的運算和儲存量。由於成本的共用性質，更可以快速提供AI/ML等新技術。
-              </p>
-              <p>
-                全球互連的分散式資料中心也為技術部門提供使用區域設施的能力。一家位於美國的物聯網公司可以為歐洲消費者提供服務，而不會造成跨大西洋的延誤。在大陸之間傳輸和路由的資料，或者會因區域隱私和資料保護法的細微差別而違反規定，但如果您認為照明開關在點亮時的兩秒延遲會不符合消費者的期望而難以獲得商業成功，則此類的要求就很重要。
-              </p>
-              <p>
-                資料中心和雲端可促進國內和國際新商機的形成。開發商建立的新機制可為消費者和商業團體節省資金。營運商可以不再需要隨時關注旅館的製冰機，而將維修車納入業務作業中；因為作業員知道，只要在需要時派遣一輛維修車前往處理即可，此舉可為公司節省數萬美元的營運費用。
-              </p>
-              <p>
-                <span style="font-size: 14pt"
-                  ><strong>不必移動的非關鍵資料</strong></span
-                >
-              </p>
-              <p>
-                在故障發生之前使用AI/ML查看設備中這些微小的簽章可能很複雜，因為相關的簽章可能過於精細而難以查核。這些變化可能是泵浦馬達的振動，或者是熱交換器或冷凝器溫度的細微變化：這些是個人可能無法識別甚至看不到的東西。連網製冰機案例的數量似乎並未足以讓開發商將其視為必須關注的問題；然而考慮到應用於倉庫或旅館照明的相同情境或商業模式時，倉庫中可能存在數以千計的燈泡，每個燈泡都放置在需要移動以便更換燈泡的貨架或機器上方，此意味著在最關鍵的時刻可能會造成生產線的停擺。
-              </p>
-              <p>
-                預測性維護和雲端分析的業務正蓬勃發展，而對其所生成的資料，AI/ML提供一種簡單可執行自動評估的方法。儘管如此，這些新的商業模式確實產生了大量的資料，而這又帶來了全新且有趣的技術挑戰，這些挑戰是開發人員和營運商現在所需應對的課題。
-              </p>
-              <p>
-                在大多數應用中，資料是由某種形式的感測器所生成，而這需要使用功率和頻寬。在網際網路設施的上行鏈路和射頻頻譜方面也會消耗頻寬，發送大量可能「無變化」的資料意味著昂貴且不划算；無線電消耗大量功率，而且在繁忙的射頻頻譜中，傳輸的重試會消耗更多功率。更多的感測器會導致更繁忙的射頻環境，以及需要維護更多的電池，除了電池壽命和當地頻寬周圍的問題外，某些應用程式也可能更容易受到隨之而來的安全問題影響。大量的資料會形成各種模式，如果被攔截，這些模式會遭到那些具惡意意圖的人利用。
-              </p>
-              <p>
-                <span style="font-size: 14pt"><strong>邊緣運算</strong></span>
-              </p>
-              <p>
-                為遏止這些問題因而將很多決策返還給終端節點的趨勢越來越多，因此可將資料傳輸減少到僅處理更重要的資料。這可降低功耗、頻寬和數位簽章。決策返還給終端節點所帶來的警示意味著可能增加終端節點的運算處理、儲存，以及功耗。物聯網似乎陷入了一種惡性循環，限制了它的可訪問性和市場成長。
-              </p>
-              <p>
-                AI的創新得以利用更小的微控制器，並讓快閃記憶體和RAM可適用更小的記憶體資源，例如
-                ARM
-                Cortex-M。在執行複雜演算法以解決現實生活的極端情況時，在系統中執行AI的程式碼也能比傳統編碼小得多。這能使韌體更新更小、開發更快，並且更容易在大型感測器群體中發送。
-              </p>
-              <p>
-                許多開發人員在終端節點感測器產品中利用AI來改進他們的設計，並為消費者和營運商提供更好的體驗。使用開發套件的AI技術示例也可以快速開發出原型的樣品。
-              </p>
-              <p>
-                套件也可用於演示泵浦監控系統。縮小無線感測器、延長壽命，以及採用更好的安全性能，所有這些都不會破壞帶有雜訊的本地射頻頻譜，此意味著部署更多有用的感測器，可以提高現場的生產力和舒適度。日常用品，例如牆壁開關、環境感測器，甚至路邊的垃圾感測器，都能在極具吸引力的成本和性能要求下，併入自動化和監控的生態系統中。
-              </p>
-            </div>
-          </section>
+      <div class="container">
+        <div class="row all-content">
+          <div class="col-8 new-content">
+            <section class="new">
+              {% if new.published_date %}
+              <time class="date"> {{ new.published_date }} </time>
+              {% endif %}
+              <h2>{{ new.title }}</h2>
+              <p>{{ new.keyword|linebreaksbr }}</p>
+              <!--add content in js-->
+              <div class="newsContent"></div>
+            </section>
+          </div>
+          <div class="col-4">
+            <section class="complementary">
+              <h3>其他新聞</h3>
+              {% for new in new_list %}
+              <article>
+                <div class="newBody">
+                  <div class="date">{{ new.published_date }}</div>
+                  <div class="title"><h4>{{ new.title }}</h4></div>
+                  <div class="keyword">
+                    <h5><a href="#">{{ new.keyword }}</a></h5>
+                  </div>
+                </div>
+              </article>
+              {% endfor %}
+            </section>
+          </div>
         </div>
-
-        <section class="complementary">
-          <article>
-            This is a text
-            <div><a href=""></a></div>
-          </article>
-        </section>
       </div>
     </main>
   </body>
-  <script src="../../static/js/scripts.js"></script>
+  <script src="../../static/js/new_detail.js"></script>
 </html>

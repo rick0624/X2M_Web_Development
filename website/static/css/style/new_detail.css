@@ -32,7 +32,7 @@ main div.all-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px;
+  margin: 0rem -3rem;
 }
 
 main div.all-content div.new-content section.new div.newsContent p {
@@ -41,5 +41,26 @@ main div.all-content div.new-content section.new div.newsContent p {
 
 main div.all-content section.complementary {
   background-color: aquamarine;
+}
+
+main div.all-content section.complementary article {
+  margin: 2rem 0.25rem;
+  background-color: bisque;
+}
+
+main div.all-content section.complementary article div.newBody {
+  padding: 1rem;
+}
+
+main div.all-content section.complementary article div.newBody div.date {
+  margin: 1rem;
+}
+
+main div.all-content section.complementary article div.newBody div.title {
+  margin: 0.5rem 1rem 0rem 1rem;
+}
+
+main div.all-content section.complementary article div.newBody div.keyword {
+  margin: 0rem 1rem 1rem 1rem;
 }
 /*# sourceMappingURL=new_detail.css.map */

@@ -42,6 +42,10 @@ main {
       width: 20%;
       word-wrap: break-word;
     }
+
+    form {
+      display: none;
+    }
   }
 
   section.newsList {
@@ -64,11 +68,15 @@ main {
         font-size: 1.25rem;
       }
 
-      a {
-        display: block;
-        background-color: coral;
-        width: 100%;
-        height: 100%;
+      td.modify {
+        a {
+          display: none;
+          margin: 0.5rem;
+          background-color: cornflowerblue;
+          i {
+            font-size: 1.25rem;
+          }
+        }
       }
     }
   }

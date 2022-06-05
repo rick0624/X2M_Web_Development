@@ -53,6 +53,10 @@ main section.top div.right {
   word-wrap: break-word;
 }
 
+main section.top form {
+  display: none;
+}
+
 main section.newsList {
   background-color: cadetblue;
   display: -webkit-box;
@@ -80,11 +84,14 @@ main section.newsList table td {
   font-size: 1.25rem;
 }
 
-main section.newsList table a {
-  display: block;
-  background-color: coral;
-  width: 100%;
-  height: 100%;
+main section.newsList table td.modify a {
+  display: none;
+  margin: 0.5rem;
+  background-color: cornflowerblue;
+}
+
+main section.newsList table td.modify a i {
+  font-size: 1.25rem;
 }
 
 main section.pagination {
