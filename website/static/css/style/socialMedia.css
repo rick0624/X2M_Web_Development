@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  height: 20vh;
+  background-color: bisque;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div {
+  background-color: gray;
+}
+
+header nav ul li a {
+  padding: 1rem;
+  font-size: larger;
+}
+
+main {
+  margin: 2rem 4rem;
+}
+
+main section.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: aquamarine;
+}
+
+main section.top div.left {
+  width: 80%;
+  background-color: brown;
+}
+
+main section.top div.left h1 {
+  font-size: 1.5rem;
+}
+
+main section.top div.right {
+  width: 20%;
+  word-wrap: break-word;
+}
+
+main section.top form {
+  display: none;
+}
+
+main section.newsList {
+  background-color: cadetblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section.newsList table {
+  color: aliceblue;
+}
+
+main section.newsList table,
+main section.newsList table th,
+main section.newsList table td {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+main section.newsList table th,
+main section.newsList table td {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+main section.newsList table td.modify a {
+  display: none;
+  margin: 0.5rem;
+  background-color: cornflowerblue;
+}
+
+main section.newsList table td.modify a i {
+  font-size: 1.25rem;
+}
+
+main section.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=socialMedia.css.map */

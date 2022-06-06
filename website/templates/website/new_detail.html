@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link href="{% static 'css/style/new_detail.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="logo"><h1>This is the header.</h1></div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Function1</a>
+            <a href="#">Function2</a>
+            <a href="#">Function3</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- <a href="#" class="goBack">點擊回到新聞主頁面</a> -->
+    <a href="{% url 'socialMedia'%}" class="goBack">點擊回到新聞主頁面</a>
+    <a
+      href="https://www.eettaiwan.com/20220523ta71-artificial-intelligence-on-the-edge/"
+      >real website</a
+    >
+    <!-- get the news content, it will be removed in js-->
+    <p>{{ new.content }}</p>
+
+    <main>
+      <div class="container">
+        <div class="row all-content">
+          <div class="col-8 new-content">
+            <section class="new">
+              {% if new.published_date %}
+              <time class="date"> {{ new.published_date }} </time>
+              {% endif %}
+              <h2>{{ new.title }}</h2>
+              <p>{{ new.keyword|linebreaksbr }}</p>
+              <!--add content in js-->
+              <div class="newsContent"></div>
+            </section>
+          </div>
+          <div class="col-4">
+            <section class="complementary">
+              <h3>其他新聞</h3>
+              {% for new in new_list %}
+              <article>
+                <div class="newBody">
+                  <div class="date">{{ new.published_date }}</div>
+                  <div class="title"><h4>{{ new.title }}</h4></div>
+                  <div class="keyword">
+                    <h5><a href="#">{{ new.keyword }}</a></h5>
+                  </div>
+                </div>
+              </article>
+              {% endfor %}
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="../../static/js/new_detail.js"></script>
+</html>
