@@ -42,9 +42,60 @@
         <div class="row all-content">
           <div class="col-8 new-content">
             <section class="new">
-              {% if new.published_date %}
-              <time class="date"> {{ new.published_date }} </time>
-              {% endif %}
+              <div class="container">
+                <div class="row justify-content-between">
+                  {% if new.published_date %}
+                  <div class="col-4 date">
+                    <time class="date"> {{ new.published_date }} </time>
+                  </div>
+
+                  {% endif %}
+                  <div class="dropdown col-4">
+                    <div class="container">
+                      <div class="row justify-content-end">
+                        <div class="col-4">
+                          <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="dropdownMenu2"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            新聞管理
+                          </button>
+                          <ul
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenu2"
+                          >
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="{% url 'news_create' %}"
+                                >新增</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="{% url 'news_edit' pk=new.pk %}"
+                                >修改</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="{% url 'news_remove' pk=new.pk %}"
+                                >刪除</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <h2>{{ new.title }}</h2>
               <p>{{ new.keyword|linebreaksbr }}</p>
               <!--add content in js-->
@@ -58,10 +109,12 @@
               <article>
                 <div class="newBody">
                   <div class="date">{{ new.published_date }}</div>
-                  <div class="title"><h4>{{ new.title }}</h4></div>
-                  <div class="keyword">
-                    <h5><a href="#">{{ new.keyword }}</a></h5>
-                  </div>
+                  <a href="{% url 'new_detail' pk=new.pk %}" class="title"
+                    ><div class="title">
+                      <h4>{{ new.title }}</h4>
+                      <h6>{{ new.keyword }}</h6>
+                    </div></a
+                  >
                 </div>
               </article>
               {% endfor %}
@@ -71,5 +124,10 @@
       </div>
     </main>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"
+  ></script>
   <script src="../../static/js/new_detail.js"></script>
 </html>

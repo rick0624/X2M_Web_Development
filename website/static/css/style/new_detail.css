@@ -35,6 +35,10 @@ main div.all-content {
   margin: 0rem -3rem;
 }
 
+main div.all-content div.new-content section.new div.date {
+  padding: 0rem;
+}
+
 main div.all-content div.new-content section.new div.newsContent p {
   padding: 10px 0px;
 }
@@ -60,7 +64,12 @@ main div.all-content section.complementary article div.newBody div.title {
   margin: 0.5rem 1rem 0rem 1rem;
 }
 
-main div.all-content section.complementary article div.newBody div.keyword {
-  margin: 0rem 1rem 1rem 1rem;
+main div.all-content section.complementary article div.newBody a {
+  color: black;
+  text-decoration: none;
+}
+
+main div.all-content section.complementary article div.newBody a:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=new_detail.css.map */

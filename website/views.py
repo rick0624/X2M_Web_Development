@@ -15,7 +15,7 @@ def main_page(request):
     return render(request, 'website/main_page.html', {})
 
 def socialMedia(request):
-    new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     num_per_page = 5
     if request.GET.get('p') != None:
             num_per_page = request.GET.get('p')
@@ -42,7 +42,7 @@ def socialMedia(request):
 
 def new_detail(request,pk):
     new = get_object_or_404(New, pk=pk)
-    new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('published_date') #published_date__lte : lte在這時間之後都會選到
+    new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') #published_date__lte : lte在這時間之後都會選到
     new_list = new_list.filter(~Q(pk = pk))
     return render(request, 'website/new_detail.html', {'new': new, 'new_list':new_list[:5]})
 
