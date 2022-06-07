@@ -5,9 +5,13 @@
           box-sizing: border-box;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
 header {
   height: 20vh;
-  background-color: bisque;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,10 +21,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-header div {
-  background-color: gray;
 }
 
 header nav ul li a {
@@ -35,6 +35,10 @@ main div.all-content {
   margin: 0rem -3rem;
 }
 
+main div.all-content div.new-content {
+  background-color: white;
+}
+
 main div.all-content div.new-content section.new div.date {
   padding: 0rem;
 }
@@ -43,13 +47,9 @@ main div.all-content div.new-content section.new div.newsContent p {
   padding: 10px 0px;
 }
 
-main div.all-content section.complementary {
-  background-color: aquamarine;
-}
-
 main div.all-content section.complementary article {
   margin: 2rem 0.25rem;
-  background-color: bisque;
+  background-color: white;
 }
 
 main div.all-content section.complementary article div.newBody {
