@@ -26,8 +26,11 @@ def socialMedia(request):
     page_number = 1
     if request.GET.get('page') != None:
          page_number = request.GET.get('page')
-
     total_page_num = paginator.num_pages
+
+    if int(page_number)>int(total_page_num):  #確保新聞序號正確
+        page_number = total_page_num
+
     page_obj = paginator.get_page(page_number)
     count = (int(page_number)-1)*int(num_per_page)
     if int(page_number)<=2:

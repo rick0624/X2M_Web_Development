@@ -5,9 +5,13 @@
           box-sizing: border-box;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
 header {
   height: 20vh;
-  background-color: bisque;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,10 +21,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-header div {
-  background-color: gray;
 }
 
 header nav ul li a {
@@ -36,12 +36,10 @@ main section.top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: aquamarine;
 }
 
 main section.top div.left {
   width: 80%;
-  background-color: brown;
 }
 
 main section.top div.left h1 {
@@ -71,6 +69,19 @@ main section.newsList table {
   color: aliceblue;
 }
 
+main section.newsList table tr:nth-child(even) {
+  background-color: #d6d6d6;
+}
+
+main section.newsList table tr:nth-child(odd) {
+  background-color: #e8e6e6;
+}
+
+main section.newsList table tr:nth-child(1) {
+  background-color: #69b3b5;
+  color: #ffffff;
+}
+
 main section.newsList table,
 main section.newsList table th,
 main section.newsList table td {
@@ -82,6 +93,19 @@ main section.newsList table th,
 main section.newsList table td {
   padding: 0.5rem;
   font-size: 1.25rem;
+}
+
+main section.newsList table td {
+  color: black;
+}
+
+main section.newsList table td.title a {
+  color: black;
+  text-decoration: none;
+}
+
+main section.newsList table td.title a:hover {
+  text-decoration: underline;
 }
 
 main section.newsList table td.modify a {
@@ -101,5 +125,6 @@ main section.pagination {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=socialMedia.css.map */
