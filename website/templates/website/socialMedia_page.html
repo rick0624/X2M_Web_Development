@@ -104,9 +104,12 @@
               <a href="{% url 'news_edit' pk=new.pk %}" class="edit"
                 ><i class="fa-solid fa-pencil"></i
               ></a>
-              <a href="{% url 'news_remove' pk=new.pk %}" class="remove"
-                ><i class="fa-solid fa-trash"></i
-              ></a>
+              <a href="#" class="remove"><i class="fa-solid fa-trash"></i></a>
+              <input
+                type="hidden"
+                id="remove"
+                data-url="{% url 'news_remove' pk=new.pk %}"
+              />
             </td>
           </tr>
           {% endfor %}
@@ -162,6 +165,10 @@
       </section>
     </main>
     <!-- JavaScript Bundle with Popper -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.7.1.min.js"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

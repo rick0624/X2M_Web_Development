@@ -16,7 +16,7 @@ def main_page(request):
 
 def socialMedia(request):
     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    num_per_page = 5
+    num_per_page = 10
     if request.GET.get('p') != None:
             num_per_page = request.GET.get('p')
             request.session['p'] = num_per_page

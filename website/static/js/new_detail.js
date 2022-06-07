@@ -16,7 +16,7 @@ let div_tag = document.querySelector("div.newsContent");
 div_tag.innerHTML = `${content}`;
 
 let a_goBack = document.querySelector("a.goBack");
-console.log(a_goBack);
+// console.log(a_goBack);
 a_goBack.addEventListener("click", () => {
   //   console.log(555);
   let form = document.createElement("form");
@@ -37,4 +37,16 @@ a_goBack.addEventListener("click", () => {
   document.body.appendChild(form);
   form.submit();
   document.body.removeChild(form);
+});
+
+let a_remove_tag = document.querySelector("a.remove");
+// console.log(a_remove_tag);
+a_remove_tag.addEventListener("click", () => {
+  let check = confirm("你確定要刪除嗎?");
+  if (check) {
+    // console.log(555);
+    let hidden_remove = document.querySelector("input#remove");
+    let url = $(hidden_remove).attr("data-url");
+    document.location.href = url;
+  }
 });
