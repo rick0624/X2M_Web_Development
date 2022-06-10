@@ -10,7 +10,9 @@ body {
 
 header {
   height: 20vh;
-  background-color: white;
+  background-color: #212529;
+  height: 10vh;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +23,7 @@ header {
     ul {
       li {
         a {
-          padding: 1rem;
+          padding: 0.5rem;
           font-size: larger;
         }
       }
@@ -30,12 +32,24 @@ header {
 }
 
 main {
+  a.goBack {
+    display: inline-block;
+    margin: 2rem 6rem 1rem 6rem;
+    font-size: 1.25rem;
+    color: #212529;
+    text-decoration: none;
+    &:hover {
+      color: #3f444a;
+      text-decoration: underline;
+    }
+  }
   div.all-content {
     display: flex;
     margin: 0rem -3rem;
 
     div.new-content {
       background-color: white;
+      margin-bottom: 2rem;
       section.new {
         div.date {
           padding: 0rem;

@@ -29,15 +29,20 @@
       </nav>
     </header>
     <!-- <a href="#" class="goBack">點擊回到新聞主頁面</a> -->
-    <a href="{% url 'socialMedia'%}" class="goBack">點擊回到新聞主頁面</a>
-    <a
+
+    <!-- <a
       href="https://www.eettaiwan.com/20220523ta71-artificial-intelligence-on-the-edge/"
       >real website</a
-    >
+    > -->
     <!-- get the news content, it will be removed in js-->
     <p>{{ new.content }}</p>
 
     <main>
+      <div class="top">
+        <!-- <button type="button" class="btn btn-primary"></button> -->
+        <a href="{% url 'socialMedia'%}" class="goBack">&larr;新聞主頁面</a>
+        <!-- <button></button> -->
+      </div>
       <div class="container">
         <div class="row all-content">
           <div class="col-8 new-content">
@@ -46,11 +51,11 @@
                 <div class="row justify-content-between">
                   {% if new.published_date %}
                   <div class="col-4 date">
-                    <time class="date"> {{ new.published_date }} </time>
+                    <time class="date"> {{ new.published_date.date }} </time>
                   </div>
 
                   {% endif %}
-                  <div class="dropdown col-4">
+                  <!-- <div class="dropdown col-4">
                     <div class="container">
                       <div class="row justify-content-end">
                         <div class="col-5">
@@ -93,7 +98,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
 
@@ -109,7 +114,7 @@
               {% for new in new_list %}
               <article>
                 <div class="newBody">
-                  <div class="date">{{ new.published_date }}</div>
+                  <div class="date">{{ new.published_date.date }}</div>
                   <a href="{% url 'new_detail' pk=new.pk %}" class="title"
                     ><div class="title">
                       <h4>{{ new.title }}</h4>
