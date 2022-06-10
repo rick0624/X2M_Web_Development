@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
+from django.conf.urls.i18n import i18n_patterns
+from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
     path('', views.main_page, name='main_page'),
@@ -10,4 +12,6 @@ urlpatterns = [
     path('new/<pk>/remove/', views.news_remove, name='news_remove'),
     # path('scookie',views.setcookie, name='setcookie'),  
     # path('gcookie',views.getcookie, name='getcookie'),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
+

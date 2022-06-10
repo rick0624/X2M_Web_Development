@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,25 +14,53 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
+    <script>
+        var form = document.getElementById("language-form");
+        document.getElementById("language-btn").addEventListener("click", function () {
+        form.submit();
+    });
+    </script>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container px-1" style="padding-left:10%;padding-right:10%;">
+                <a class="navbar-brand" href="{%url 'main_page'%}"><img src="{% static 'images/FS-home-logo.png'%}" style="width:50%;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Test</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Company" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Business" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Product" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Contract" %}</a></li>
+                        <!-- dropdown -->
+                        {% load i18n %}
+                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              {% trans "Language"%}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                <li>
+                                    <button type="submit" name="language" value="{{ language.code }}" class="dropdown-item">
+                                        {{ language.name_local }}
+                                    </button>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        <li>
+                        </form>
+                        <!--/ dropdown -->
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-dark py-5" style="margin-top: 71px;">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
