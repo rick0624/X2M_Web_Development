@@ -138,6 +138,17 @@ msgstr "業務介紹" # 填入對應的翻譯文字
 msgid "Remote Automatic Sensing System"
 msgstr "遠程自動傳感系統" # 填入對應的翻譯文字
 
+<<<<<<< HEAD
+=======
+#: website/templates/website/about_business.html:92  # 對應的位置
+msgid "Configuration"
+msgstr "配置" # 填入對應的翻譯文字
+
+#: website/templates/website/about_business.html:102  # 對應的位置
+msgid "Feature"
+msgstr "特徵" # 填入對應的翻譯文字
+
+>>>>>>> 989fecca0938bbd788f2298ae265a3e6f408fa85
 #: .\mysite\settings.py:124
 msgid "English"
 msgstr ""

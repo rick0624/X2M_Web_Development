@@ -5,7 +5,10 @@
  */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
 // let p_html = document.querySelector("p").html();
+// app.use("/static/js", express.static("./static/js/"));
+// console.log(555);
 let p_tag = document.querySelector("p");
 let content = p_tag.innerText;
 p_tag.remove();

@@ -46,9 +46,10 @@ def socialMedia(request):
         page_minus_2 = total_page_num-5
     else:
         page_minus_2 = int(page_number)-3
+    active_check_num = int(page_number)-1
     
     return render(request, 'website/socialMedia_page.html', {'page_obj': page_obj, 'total_page_num':range(total_page_num), 'count':count, 
-    'page_number':page_number, 'num_per_page':num_per_page, 'total_page':total_page_num, 'total_5':range(page_minus_2,page_minus_2+5)})
+    'page_number':int(page_number),'active_check_num':active_check_num, 'num_per_page':num_per_page, 'total_page':total_page_num, 'total_5':range(page_minus_2,page_minus_2+5)})
 
 def new_detail(request,pk):
     new = get_object_or_404(New, pk=pk)
@@ -86,6 +87,11 @@ def news_remove(request, pk):
     post.delete()
     return redirect('socialMedia')
 
+# def test(request,pk):
+#     new = get_object_or_404(New, pk=pk)
+#     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') #published_date__lte : lte在這時間之後都會選到
+#     new_list = new_list.filter(~Q(pk = pk))
+#     return render(request, 'website/test.html', {'new': new, 'new_list':new_list[:5]})
  
 # def setcookie():  
 #     response = HttpResponse("Cookie Set")  
