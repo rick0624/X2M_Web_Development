@@ -9,23 +9,34 @@ body {
   background-color: #f5f5f5;
 }
 
-header {
-  height: 20vh;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 header nav ul li a {
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: larger;
+}
+
+main button.btn-secondary {
+  margin: 2rem 6rem 1rem 6rem;
+  background-color: #212529;
+}
+
+main button.btn-secondary:hover {
+  background-color: #31373c;
+}
+
+main button.btn-secondary a.goBack {
+  color: #e3e3e3;
+  text-decoration: none;
+}
+
+main button.btn-secondary a.goBack:hover {
+  color: #ffffff;
 }
 
 main div.all-content {
@@ -37,6 +48,15 @@ main div.all-content {
 
 main div.all-content div.new-content {
   background-color: white;
+  margin-bottom: 2rem;
+}
+
+main div.all-content div.new-content section.new {
+  padding: 1.5rem;
+}
+
+main div.all-content div.new-content section.new div.title h2 {
+  font-size: 2.75rem;
 }
 
 main div.all-content div.new-content section.new div.date {
@@ -45,6 +65,14 @@ main div.all-content div.new-content section.new div.date {
 
 main div.all-content div.new-content section.new div.newsContent p {
   padding: 10px 0px;
+}
+
+main div.all-content section.complementary {
+  margin: 0rem 0rem 0rem 1rem;
+}
+
+main div.all-content section.complementary h3 {
+  font-size: 1.5rem;
 }
 
 main div.all-content section.complementary article {

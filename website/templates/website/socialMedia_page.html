@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,8 +23,8 @@
     <link href="{% static 'css/style/socialMedia.css' %}" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <div class="logo"><h1>This is the header.</h1></div>
+    <header class="sticky">
+      <!-- <div class="logo"><h1>This is the header.</h1></div>
 
       <nav>
         <ul>
@@ -34,18 +34,98 @@
             <a href="#">Function3</a>
           </li>
         </ul>
+      </nav> -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky">
+        <div
+          class="container px-1"
+          style="padding-left: 10%; padding-right: 10%"
+        >
+          <a class="navbar-brand" href="{%url 'main_page'%}"
+            ><img
+              src="{% static 'images/FS-home-logo.png'%}"
+              style="width: 50%"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#!">{% trans "Company" %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!">{% trans "Business" %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!">{% trans "Product" %}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!">{% trans "Contract" %}</a>
+              </li>
+              <!-- dropdown -->
+              {% load i18n %}
+              <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}" />
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {% trans "Language"%}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    <!--防止tag錯誤-->
+                    {%get_available_languages as LANGUAGES %}
+                    <!--防止tag錯誤-->
+                    {%get_language_info_list for LANGUAGES as languages %}
+                    <!--防止tag錯誤-->
+                    {% for language in languages %}
+                    <li>
+                      <button
+                        type="submit"
+                        name="language"
+                        value="{{ language.code }}"
+                        class="dropdown-item"
+                      >
+                        {{ language.name_local }}
+                      </button>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+
+                <li></li>
+              </form>
+
+              <!--/ dropdown -->
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
-    <!-- {% for post in page_obj %}
-    <h3>{{ post.title }}</h3>
-    {% endfor %} -->
+
     <main>
       <section class="top">
-        <div class="left">
+        <!-- <div class="left">
           <button>switch button</button>
           <h1>Recent News</h1>
-        </div>
-        <div class="dropdown">
+        </div> -->
+        <!-- <div class="dropdown">
           <button
             class="btn btn-secondary dropdown-toggle"
             type="button"
@@ -81,10 +161,41 @@
             />
             <button type="submit">確定</button>
           </form>
-        </div>
+        </div> -->
       </section>
       <section class="newsList">
-        <table width="100%">
+        <div class="table-responsive-xl">
+          <table class="table table-hover caption-top" width="100%">
+            <caption>
+              最近的新聞
+            </caption>
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Keyword</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for new in page_obj %}
+              <tr
+                class="clickable-row"
+                data-href="{% url 'new_detail' pk=new.pk %}"
+              >
+                <th width="5%" scope="row">{{ forloop.counter|add:count }}</th>
+                <td width="40%" class="fourty">{{ new.title }}</td>
+                <td width="42%" class="fourty">
+                  {{ new.keyword|linebreaksbr }}
+                </td>
+                <td width="13%">{{ new.published_date.date }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- <table width="100%">
           <tr>
             <th width="10%">No.</th>
             <th width="30%">Title</th>
@@ -99,9 +210,9 @@
             </td>
             <td>{{ new.keyword|linebreaksbr }}</td>
             <td class="modify">
-              {{ new.published_date }}
-              <!-- <section class="test"></section> -->
-              <a href="{% url 'news_edit' pk=new.pk %}" class="edit"
+              {{ new.published_date }} -->
+        <!-- <section class="test"></section> -->
+        <!-- <a href="{% url 'news_edit' pk=new.pk %}" class="edit"
                 ><i class="fa-solid fa-pencil"></i
               ></a>
               <a href="#" class="remove"><i class="fa-solid fa-trash"></i></a>
@@ -113,12 +224,18 @@
             </td>
           </tr>
           {% endfor %}
-        </table>
+        </table> -->
       </section>
       <section class="pagination">
         <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-centers pagination-lg">
-            {% if page_obj.has_previous %}
+          <ul class="pagination justify-content-centers">
+            {% if page_obj.has_previous %} {% if page_number > 2 %}
+            <li class="page-item">
+              <a class="page-link" href="?page=1&p={{ num_per_page }}"
+                >第一頁</a
+              >
+            </li>
+            {% endif %}
             <li class="page-item">
               <a
                 class="page-link"
@@ -126,10 +243,27 @@
                 aria-label="Previous"
               >
                 <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">上一頁</span>
               </a>
             </li>
-            {% endif %} {% if total_page < 5 %} {% for num in total_page_num%}
+            {% endif %}
+            <li class="page-item hidden">
+              <a class="page-link" href="?page=1&p={{ num_per_page }}"
+                >第一頁</a
+              >
+            </li>
+            {% if total_page < 5 %} {% for num in total_page_num%}
+            <!--debug-->
+            {% if num == active_check_num %}
+            <li class="page-item active">
+              <a
+                class="page-link"
+                href="?page={{num|add:1}}&p={{ num_per_page }}"
+                >{{num|add:1}}</a
+              >
+              <!-- {{num|add:1}} -->
+            </li>
+            {% else %}
             <li class="page-item">
               <a
                 class="page-link"
@@ -137,10 +271,21 @@
                 >{{num|add:1}}</a
               >
             </li>
-            {% endfor %} {% endif %}
+            {% endif %} {% endfor %} {% endif %}
             <!-- <div> debug </div> -->
             <!--debug加的-->
             {% if total_page >= 5 %} {% for num in total_5%}
+            <!-- 防止template換行-->
+            {% if num == active_check_num %}
+            <li class="page-item active">
+              <a
+                class="page-link"
+                href="?page={{num|add:1}}&p={{ num_per_page }}"
+                >{{num|add:1}}</a
+              >
+              <!-- {{num|add:1}} -->
+            </li>
+            {% else %}
             <li class="page-item">
               <a
                 class="page-link"
@@ -148,7 +293,7 @@
                 >{{num|add:1}}</a
               >
             </li>
-            {% endfor %} {% endif %} {% if page_obj.has_next %}
+            {% endif %} {% endfor %} {% endif %} {% if page_obj.has_next %}
             <li class="page-item">
               <a
                 class="page-link"
@@ -156,10 +301,15 @@
                 aria-label="Next"
               >
                 <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">下一頁</span>
               </a>
             </li>
             {% endif %}
+            <li class="page-item hidden">
+              <a class="page-link" href="?page=1&p={{ num_per_page }}"
+                >最後一頁</a
+              >
+            </li>
           </ul>
         </nav>
       </section>
@@ -174,6 +324,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script src="../../static/js/social_media.js"></script>
+    <!-- <script src="../../static/js/social_media.js"></script> -->
+    <script src="{% static 'js/social_media.js' %}"></script>
   </body>
 </html>

@@ -15,5 +15,6 @@ urlpatterns = [
     # path('scookie',views.setcookie, name='setcookie'),  
     # path('gcookie',views.getcookie, name='getcookie'),
     path('i18n/', include('django.conf.urls.i18n')),
+    # path('test/<int:pk>/', views.test, name='test'),
 ]
 
