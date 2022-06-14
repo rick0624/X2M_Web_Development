@@ -14,6 +14,12 @@ from django.db.models import Q
 def main_page(request):
     return render(request, 'website/main_page.html', {})
 
+def about_company(request):
+    return render(request, 'website/about_company.html', {})
+
+def about_business(request):
+    return render(request, 'website/about_business.html', {})
+
 def socialMedia(request):
     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     num_per_page = 10
