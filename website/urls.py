@@ -13,6 +13,7 @@ urlpatterns = [
     path('new/create/', views.news_create, name='news_create'),
     path('new/<int:pk>/edit/', views.news_edit, name='news_edit'),
     path('new/<pk>/remove/', views.news_remove, name='news_remove'),
+    path('contact/', views.contact_view, name='contact'),
     # path('scookie',views.setcookie, name='setcookie'),  
     # path('gcookie',views.getcookie, name='getcookie'),
     path('i18n/', include('django.conf.urls.i18n')),

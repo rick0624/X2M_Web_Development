@@ -153,3 +153,12 @@ STATIC_ROOT = BASE_DIR / 'static'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#contact頁面傳送email給管理者
+'''EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+DEFAULT_FROM_EMAIL = 'will@learndjango.com'
+EMAIL_HOST = 'smtp.sendgrid.net' 
+EMAIL_HOST_USER = 'apikey' 
+EMAIL_HOST_PASSWORD = '<sendgrid_password>' 
+EMAIL_PORT = 587 
+EMAIL_USE_TLS = True '''

@@ -29,8 +29,13 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
+<<<<<<< HEAD
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_product'%}">{% trans "Product" %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">{% trans "Contract" %}</a></li>
+=======
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Product" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{%url 'contact'%}">{% trans "Contract" %}</a></li>
+>>>>>>> 852012274f5ca4fc7c987f24f37364971e5c0079
                         <!-- dropdown -->
                         {% load i18n %}
                         <form action="{% url 'set_language' %}" method="post">{% csrf_token %}

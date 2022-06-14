@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*  header  */
 header {
     margin-top: 70px;
@@ -104,4 +105,207 @@ header {
 footer img {
     width:20%;
     padding-bottom: 20px;
+=======
+<<<<<<< HEAD
+/*  header  */
+header {
+    margin-top: 70px;
+    height:100%;
+}
+
+/*intro*/
+
+.intro {
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+.intro_image {
+    width: 40%;
+    position: relative;
+    float: left;
+    padding: 20px;
+}
+
+.intro_image img{
+    width:100%;
+}
+
+.intro_text {
+    width:60%;
+    float: left;
+    padding-left: 20px;
+}
+
+.intro_text p {
+    font-size: 26px;
+    line-height:1.6;
+}
+
+.intro_business{
+    padding: 20px;
+    justify-content: center; 
+}
+
+.intro_business_text {
+    padding: 20px;
+    width:50%;
+
+}
+
+.intro_business_text p {
+    padding-top: 30px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+    color: gray;
+}
+
+@media screen and (max-width:1024px) {
+    .intro_image,.intro_text,.intro_business_text {
+        width: 100%;
+    }
+    .intro_business{
+        justify-content:left; 
+    }
+  }
+
+/*about us part*/
+.aboutUs{
+    width: 100%;
+    position: relative;
+}
+.aboutUs img{
+    width:100%;
+    height: auto;
+}
+.aboutUs div {
+    position: absolute;
+    width:60%;
+    top:40%;
+    left:5%;
+}
+.aboutUs p{
+    color: white;
+    font-size:30px;
+}
+.aboutUs .aboutUs_button {
+    padding-top: 10px;
+}
+.aboutUs .aboutUs_button a{
+    border: 1px solid #00b274;
+    color:white;
+    font-size:25px;
+    background-color: transparent;
+}
+.aboutUs .aboutUs_button a:hover{
+    background-color: #00b274;
+}
+
+/* footer */
+footer img {
+    width:20%;
+    padding-bottom: 20px;
+=======
+/*  header  */
+header {
+    margin-top: 70px;
+    height:100%;
+}
+
+/*intro*/
+
+.intro {
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+.intro_image {
+    width: 40%;
+    position: relative;
+    float: left;
+    padding: 20px;
+}
+
+.intro_image img{
+    width:100%;
+}
+
+.intro_text {
+    width:60%;
+    float: left;
+    padding-left: 20px;
+}
+
+.intro_text p {
+    font-size: 26px;
+    line-height:1.6;
+}
+
+.intro_business{
+    padding: 20px;
+    justify-content: center; 
+}
+
+.intro_business_text {
+    padding: 20px;
+    width:50%;
+
+}
+
+.intro_business_text p {
+    padding-top: 30px;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.6;
+    color: gray;
+}
+
+@media screen and (max-width:1024px) {
+    .intro_image,.intro_text,.intro_business_text {
+        width: 100%;
+    }
+    .intro_business{
+        justify-content:left; 
+    }
+  }
+
+/*about us part*/
+.aboutUs{
+    width: 100%;
+    position: relative;
+}
+.aboutUs img{
+    width:100%;
+    height: auto;
+}
+.aboutUs div {
+    position: absolute;
+    width:60%;
+    top:40%;
+    left:5%;
+}
+.aboutUs p{
+    color: white;
+    font-size:30px;
+}
+.aboutUs .aboutUs_button {
+    padding-top: 10px;
+}
+.aboutUs .aboutUs_button a{
+    border: 1px solid #00b274;
+    color:white;
+    font-size:25px;
+    background-color: transparent;
+}
+.aboutUs .aboutUs_button a:hover{
+    background-color: #00b274;
+}
+
+/* footer */
+footer img {
+    width:20%;
+    padding-bottom: 20px;
+>>>>>>> 989fecca0938bbd788f2298ae265a3e6f408fa85
+>>>>>>> 852012274f5ca4fc7c987f24f37364971e5c0079
 }
