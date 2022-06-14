@@ -1,0 +1,131 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>X2M connect</title>
+        <!-- Favicon-->
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/style/about_company.css'%}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container px-1" style="padding-left:10%;padding-right:10%;">
+                <a class="navbar-brand" href="{%url 'main_page'%}"><img src="{% static 'images/FS-home-logo.png'%}" style="width:50%;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Product" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Contract" %}</a></li>
+                        <!-- dropdown -->
+                        {% load i18n %}
+                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              {% trans "Language"%}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                <li>
+                                    <button type="submit" name="language" value="{{ language.code }}" class="dropdown-item">
+                                        {{ language.name_local }}
+                                    </button>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        <li>
+                        </form>
+                        <!--/ dropdown -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header -->
+        <header>
+            <div>
+                <div class="header">
+                <img src="{% static 'images/light.jpg'%}" alt="light" style="width:100%;">
+                <div class="header_text">
+                    <p class="fw-light">
+                        <b>{% trans 'Our Team' %} <span class="header_button"><a class="btn" href="#">>></a></span></b>
+                    </p>
+                    
+                </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Introduction section-->
+        <section class="py-5 border-bottom intro_section">
+            <div class="container px-3 my-5 intro_div">
+                <div class="row">
+                    <div>
+                        <div class="intro_head">
+                            <p><b>{% trans 'About Us'%}</b></p>
+                        </div>
+                        <div  class="intro">
+                            <p>
+                                {%trans "X2M is a technology company that uses the internet to deliver productivity improvements, cost savings and improved public safety to enterprise and government customers. X2M’s current focus is servicing the utility sector in the Asia-Pacific (APAC) utility market through the provision of technology which connects devices over the internet, such as water meters and gas pressure sensors and which enables data exchange and control of these devices. This category is commonly referred to as the Internet of Things (IoT)."%}
+                            </p>
+                            <p>
+                                {%trans "The APAC utility market typically uses aging analogue infrastructure in an environment of increasing population and demand for services. Utility providers and governments in the APAC region are increasingly migrating to sophisticated internet based technology solutions in search of productivity improvements, environmental sustainability, waste reduction and enhanced public safety."%}
+                            </p>
+                            <p>
+                                {%trans "The IoT entails connecting everyday objects to the internet so they can communicate with each other and with centralised systems (such as big data, artificial intelligence systems, machine learning, billing and control platforms and distributed systems (such as factory automation, building automation, smart parks and local safety systems). These objects range from utility related devices such as air conditioning systems, solar systems, electric vehicle charging stations, pressure sensors, as well as water, electricity and gas meters to household or industrial items such as blinds, compressors, lights and displays. Once connected to the internet, they can send and/or receive information and potentially be controlled remotely. The figure below depicts how a typical end-to-end IoT solution operates. The three different components of an IoT platform are the IoT Device, the IoT Hub, and the IoT Platform:"%}
+                            </p>
+                        </div>
+                        <div  class="intro">
+                            <p>
+                                <b>(a) {%trans "IoT Device"%}:</b><br>
+                                {%trans "These are individual smart devices, either built in or added to a meter or other infrastructure item that can connect to the internet to send and receive data."%}
+                            </p>
+                            <p>
+                                <b>(b) {%trans "IoT Hub"%}:</b><br>
+                                {%trans "A small computing device that is located near the end smart devices. Its purpose is to collate and simplify the information received from each device and trigger local actions. Data is also sent to the central IoT platform in the cloud to trigger group actions. Some IoT devices do not make use of the IoT hub."%}
+                            </p>
+                            <p>
+                                <b>(c) {%trans "IoT Platform"%}:</b><br>
+                                {%trans "The software application that allows device, alert and user management, data collection and visualisation, application development and analytics."%}<br>
+                                {%trans "The IoT enables old style analogue devices to become “smart” devices delivering immediate customer benefits, as evidenced in the utility market."%}
+                            </p>
+                            <img src="{% static 'images/iot.png'%}" alt="iot">
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-5">
+                <p class=" text-center text-white">
+                    <img src="{% static 'images/FS-home-logo.png'%}"><br>
+                    <span>Copyright &copy; X2M 2022</span>
+                </p> 
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

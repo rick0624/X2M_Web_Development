@@ -5,14 +5,21 @@ from django.utils import timezone
 from .models import New
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
-from .form import NewForm
+from .form import NewForm,ContactForm
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.db.models import Q
-
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 # Create your views here.
 def main_page(request):
     return render(request, 'website/main_page.html', {})
+
+def about_company(request):
+    return render(request, 'website/about_company.html', {})
+
+def about_business(request):
+    return render(request, 'website/about_business.html', {})
 
 def socialMedia(request):
     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -88,3 +95,20 @@ def news_remove(request, pk):
 # def getcookie(request):  
 #     tutorial  = request.COOKIES['java-tutorial']  
 #     return HttpResponse("java tutorials @: "+  tutorial); 
+
+def contact_view(request):
+    if request.method == 'POST':
+        details = ContactForm(request.POST)
+        if details.is_valid():
+                form = details.save(commit = False)
+                form.save()
+                #send_mail(first_name+last_name,message,email,['ted87940@gmail.com',email]) #第一個欄位是email標題，最後一欄位是管理者的email 在setting中也要設定  
+                #return redirect("/contact/")
+                #return render(request, 'contact/success.html')
+                return render(request, "contact/contact.html", {'form':details,'success':True})  
+        else:
+                #return render(request, 'contact/contact.html')
+                return redirect("/contact/")
+    else:
+        form = ContactForm(None)
+        return render(request, 'contact/contact.html', {'form': form})
