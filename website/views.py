@@ -20,6 +20,9 @@ def about_company(request):
 def about_business(request):
     return render(request, 'website/about_business.html', {})
 
+def about_product(request):
+    return render(request, 'website/about_product.html', {})
+
 def socialMedia(request):
     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     num_per_page = 10

@@ -8,24 +8,30 @@ header {
 .header_text{
     position: absolute;
     top:40%;
-    left:6%;
+    left:10%;
     display: flex;
     align-items: center;
 }
 
 .header_button,.header_text p{
     color: white;
-    font-size:5.5vw;
+    font-size:6vw;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .header_text b{
     font-weight: 900;
 }
 
+.header_button{
+    padding: 20px;
+}
+
 .header_button a{
+    text-decoration:none;
     color:white;
     background-color: transparent;
-    font-size:5.5vw;
+    font-size:6vw;
 }
 
 .header_button a:hover{

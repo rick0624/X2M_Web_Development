@@ -4,8 +4,16 @@ header {
     height:100%;
 }
 
-/*intro*/
+/*carousel*/
+.text-start b {
+    font-size: 5vw;
+}
+.text-start {
+    position: absolute;
+    top:40%;
+}
 
+/*intro*/
 .intro {
     /* display: flex; */
     /* align-items: center; */
@@ -29,8 +37,7 @@ header {
 }
 
 .intro_text p {
-    font-size: 26px;
-    line-height:1.6;
+    font-size: 2.5vw;
 }
 
 .intro_business{
@@ -47,7 +54,7 @@ header {
 .intro_business_text p {
     padding-top: 30px;
     text-align: left;
-    font-size: 20px;
+    font-size: 2.5vw;
     line-height: 1.6;
     color: gray;
 }

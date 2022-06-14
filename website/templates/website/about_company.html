@@ -14,6 +14,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <link href="{% static 'css/style/about_company.css'%}" rel="stylesheet">
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -25,7 +29,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Product" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about_product'%}">{% trans "Product" %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">{% trans "Contract" %}</a></li>
                         <!-- dropdown -->
                         {% load i18n %}
@@ -61,7 +65,7 @@
                 <img src="{% static 'images/light.jpg'%}" alt="light" style="width:100%;">
                 <div class="header_text">
                     <p class="fw-light">
-                        <b>{% trans 'Our Team' %} <span class="header_button"><a class="btn" href="#">>></a></span></b>
+                        <b>Our Company<span class="header_button"><a href="#">>></a></span></b>
                     </p>
                     
                 </div>
