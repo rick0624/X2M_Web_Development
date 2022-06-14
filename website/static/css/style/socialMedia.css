@@ -9,25 +9,15 @@ body {
   background-color: #f5f5f5;
 }
 
-header {
-  height: 20vh;
-  background-color: #212529;
-  height: 10vh;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
-header nav ul li a {
-  padding: 0.5rem;
-  font-size: larger;
+header nav div.container {
+  margin: 0rem 0rem 0rem 6rem;
 }
 
 main {
@@ -67,22 +57,26 @@ main section.newsList .clickable-row {
   cursor: pointer;
 }
 
-main section.newsList table {
+main section.newsList div {
   margin: 0rem 2rem;
 }
 
-main section.newsList table caption {
+main section.newsList div table caption {
   font-size: 2rem;
 }
 
-main section.newsList table th {
+main section.newsList div table th {
   text-align: center;
 }
 
-main section.newsList table tbody th,
-main section.newsList table tbody td {
+main section.newsList div table tbody th,
+main section.newsList div table tbody td {
   padding: 1rem;
   font-size: 1.15rem;
+}
+
+main section.newsList div table tbody td.fourty {
+  min-width: 400px;
 }
 
 main section.pagination {
@@ -99,5 +93,13 @@ main section.pagination li.page-item a {
   background-color: #f5f5f5;
   margin: 0rem 1rem;
   border: none;
+}
+
+main section.pagination li.active a {
+  color: #0d6efd;
+  background-color: #f5f5f5;
+  margin: 0rem 1rem;
+  border-style: solid;
+  border-width: 1px;
 }
 /*# sourceMappingURL=socialMedia.css.map */

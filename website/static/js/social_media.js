@@ -38,8 +38,15 @@
 //   });
 // });
 
+// console.log(555);
+
 $(document).ready(function ($) {
   $(".clickable-row").click(function () {
     window.document.location = $(this).data("href");
   });
+});
+
+let hidden_li = document.querySelectorAll("li.hidden");
+hidden_li.forEach((element) => {
+  element.style.display = "none";
 });
