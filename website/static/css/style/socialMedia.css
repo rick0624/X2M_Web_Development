@@ -72,7 +72,7 @@ main section.newsList div table th {
 main section.newsList div table tbody th,
 main section.newsList div table tbody td {
   padding: 1rem;
-  font-size: 1.15rem;
+  font-size: 1.15vw;
 }
 
 main section.newsList div table tbody td.fourty {
