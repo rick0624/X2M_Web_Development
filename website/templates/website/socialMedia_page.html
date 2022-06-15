@@ -59,18 +59,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#!">{% trans "Company" %}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">{% trans "Business" %}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">{% trans "Product" %}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">{% trans "Contract" %}</a>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'about_product'%}">{% trans "Product" %}</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'socialMedia'%}">{% trans "News" %}</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact'%}">{% trans "Contact" %}</a></li>
               <!-- dropdown -->
               {% load i18n %}
               <form action="{% url 'set_language' %}" method="post">
@@ -229,7 +222,7 @@
       <section class="pagination">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-centers">
-            {% if page_obj.has_previous %} {% if page_number > 2 %}
+            {% if page_obj.has_previous %} {% if page_number > 3 %}
             <li class="page-item">
               <a class="page-link" href="?page=1&p={{ num_per_page }}"
                 >第一頁</a
@@ -294,6 +287,7 @@
               >
             </li>
             {% endif %} {% endfor %} {% endif %} {% if page_obj.has_next %}
+            <!-- 防止template換行-->
             <li class="page-item">
               <a
                 class="page-link"
@@ -304,7 +298,15 @@
                 <span class="sr-only">下一頁</span>
               </a>
             </li>
-            {% endif %}
+            {% if page_number < total_page_minus2%}
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?page={{ total_page }}&p={{ num_per_page }}"
+                >最後一頁</a
+              >
+            </li>
+            {% endif %} {% endif %}
             <li class="page-item hidden">
               <a class="page-link" href="?page=1&p={{ num_per_page }}"
                 >最後一頁</a
@@ -327,4 +329,12 @@
     <!-- <script src="../../static/js/social_media.js"></script> -->
     <script src="{% static 'js/social_media.js' %}"></script>
   </body>
+  <footer class="py-5 bg-dark">
+    <div class="container px-5">
+      <p class="text-center text-white">
+        <img src="{% static 'images/FS-home-logo.png'%}" /><br />
+        <span>Copyright &copy; X2M 2022</span>
+      </p>
+    </div>
+  </footer>
 </html>
