@@ -30,9 +30,13 @@ msgstr "业务介绍" # 填入對應的翻譯文字
 msgid "Product"
 msgstr "产品内容" # 填入對應的翻譯文字
 
-#: website/templates/website/main_page.html:28  # 對應的位置
-msgid "Contract"
-msgstr "联系我们" # 填入對應的翻譯文字
+#: website/templates/website/main_page.html:28  # 对应的位置
+msgid "Contact"
+msgstr "联繫我们" # 填入对应的翻译文字
+
+#: website/templates/website/main_page.html:33  # 对应的位置
+msgid "News"
+msgstr "新闻" # 填入对应的翻译文字
 
 #: website/templates/website/main_page.html:56  # 對應的位置
 msgid "Language"
