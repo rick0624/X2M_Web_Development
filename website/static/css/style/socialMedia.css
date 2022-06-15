@@ -62,7 +62,7 @@ main section.newsList div {
 }
 
 main section.newsList div table caption {
-  font-size: 2rem;
+  font-size: 2vw;
 }
 
 main section.newsList div table th {
