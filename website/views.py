@@ -27,13 +27,11 @@ def about_product(request):
 def socialMedia(request):
     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     num_per_page = 10
-    '''
-    if request.GET.get('p') != None:
-            num_per_page = request.GET.get('p')
-            request.session['p'] = num_per_page
-    else:
-        num_per_page = request.session['p']
-    '''
+    # if request.GET.get('p') != None:
+    #         num_per_page = request.GET.get('p')
+    #         request.session['p'] = num_per_page
+    # else:
+    #     num_per_page = request.session['p']
     paginator = Paginator(new_list, num_per_page) # Show 3 contacts per page.
     page_number = 1
     if request.GET.get('page') != None:
@@ -52,9 +50,10 @@ def socialMedia(request):
     else:
         page_minus_2 = int(page_number)-3
     active_check_num = int(page_number)-1
+    total_page_minus2 = int(total_page_num)-2
     
     return render(request, 'website/socialMedia_page.html', {'page_obj': page_obj, 'total_page_num':range(total_page_num), 'count':count, 
-    'page_number':int(page_number),'active_check_num':active_check_num, 'num_per_page':num_per_page, 'total_page':total_page_num, 'total_5':range(page_minus_2,page_minus_2+5)})
+    'page_number':int(page_number),'active_check_num':active_check_num, 'num_per_page':num_per_page,'total_page_minus2':total_page_minus2, 'total_page':total_page_num, 'total_5':range(page_minus_2,page_minus_2+5)})
 
 def new_detail(request,pk):
     new = get_object_or_404(New, pk=pk)

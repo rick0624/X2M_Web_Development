@@ -1,168 +1,294 @@
-{% load static %}
-{% load i18n %}
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>X2M connect</title>
-        <!-- Favicon-->
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-        <link href="{% static 'css/style/main_page.css'%}" rel="stylesheet">
-        <!-- font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container px-1" style="padding-left:10%;padding-right:10%;">
-                <a class="navbar-brand" href="{%url 'main_page'%}"><img src="{% static 'images/FS-home-logo.png'%}" style="width:50%;"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'about_product'%}">{% trans "Product" %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'socialMedia'%}">{% trans "News" %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'contact'%}">{% trans "Contact" %}</a></li>
-                        <!-- dropdown -->
-                        {% load i18n %}
-                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                        <input name="next" type="hidden" value="{{ redirect_to }}">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                              {% trans "Language"%}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                {% get_current_language as LANGUAGE_CODE %}
-                                {% get_available_languages as LANGUAGES %}
-                                {% get_language_info_list for LANGUAGES as languages %}
-                                {% for language in languages %}
-                                <li>
-                                    <button type="submit" name="language" value="{{ language.code }}" class="dropdown-item">
-                                        {{ language.name_local }}
-                                    </button>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        <li>
-                        </form>
-                        <!--/ dropdown -->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Header-->
-        <header>
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-                </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>X2M connect</title>
+    <!-- Favicon-->
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style/main_page.css'%}" rel="stylesheet" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container px-1" style="padding-left: 10%; padding-right: 10%">
+        <a class="navbar-brand" href="{%url 'main_page'%}"
+          ><img src="{% static 'images/FS-home-logo.png'%}" style="width: 50%"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about_company'%}"
+                >{% trans "Company" %}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about_business'%}"
+                >{% trans "Business" %}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about_product'%}"
+                >{% trans "Product" %}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'socialMedia'%}"
+                >{% trans "News" %}</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact'%}"
+                >{% trans "Contact" %}</a
+              >
+            </li>
+            <!-- dropdown -->
+            {% load i18n %}
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}" />
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {% trans "Language"%}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  {% get_current_language as LANGUAGE_CODE %}
+                  <!--防止tag錯誤-->
+                  {% get_available_languages as LANGUAGES %}
+                  <!--防止tag錯誤-->
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  <!--防止tag錯誤-->
+                  {% for language in languages %}
+                  <li>
+                    <button
+                      type="submit"
+                      name="language"
+                      value="{{ language.code }}"
+                      class="dropdown-item"
+                    >
+                      {{ language.name_local }}
+                    </button>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
 
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="bd-placeholder-img w-100" src="{% static 'images/tech1.jpg'%}" aria-hidden="true"> 
-                    <div class="container">
-                    <div class="carousel-caption text-start">
-                        <h1><b>{%trans "Connecting" %}</b></h1>
-                        <h1><b>{%trans "Your World" %}</b></h1>
-                        <p><a class="btn btn-lg btn-dark" href="{% url 'about_company'%}">{%trans "More info" %}</a></p>
-                    </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                  <img class="bd-placeholder-img w-100" src="{% static 'images/tech3.jpeg'%}" aria-hidden="true">
-                    <div class="container">
-                    <div class="carousel-caption text-start">
-                        <h1><b>{%trans "Connecting" %}</b></h1>
-                        <h1><b>{%trans "Your World" %}</b></h1>
-                        <p><a class="btn btn-lg btn-dark" href="{% url 'about_business'%}">{%trans "Learn more" %}</a></p>
-                    </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="bd-placeholder-img w-100" src="{% static 'images/tech2.jpg'%}" aria-hidden="true">
-        
-                    <div class="container">
-                    <div class="carousel-caption text-start">
-                        <h1><b>{%trans "Connecting" %}</b></h1>
-                        <h1><b>{%trans "Your World" %}</b></h1>
-                        <p><a class="btn btn-lg btn-dark" href="{% url 'about_product'%}">{%trans "View our Products" %}</a></p>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </header>
+              <li></li>
+            </form>
 
-        <!-- Introduction section-->
-        <section class="py-5 border-bottom" id="features">
-            <div class="container px-4 my-5">
-                <div class="intro">
-                    <div class="intro_image">
-                        <img src="{%static 'images/intro_text.jpg'%}" alt="tech">
-                    </div>
-                    <div class="intro_text">
-                        <p>
-                            {%trans "X2M is a technology company that uses the internet to deliver productivity improvements, cost savings and improved public safety to enterprise and government customers. X2M’s current focus is servicing the utility sector in the Asia-Pacific (APAC) utility market through the provision of technology which connects devices over the internet, such as water meters and gas pressure sensors and which enables data exchange and control of these devices. This category is commonly referred to as the Internet of Things (IoT)."%}
-                        </p>
-                    </div>
-                </div>
-                <div class="row intro_business py-4">
-                    <div class="intro_business_text">
-                        <h3><b>{% trans "In the Field"%}</b></h3>
-                        <p>{% trans "X2M has more than 150,000 devices connected to it’s IoT platform and distributed intelligence solution generating real-time information and control to over 37 customers in many countries and operating over multiple radio technologies. That’s proof that we offer a world class, leading edge solution that is adaptable and scalable."%}</p>
-                    </div>
-                    <div class="intro_business_text">
-                        <h3><b>{% trans "Our approach"%}</b></h3>
-                        <p>{% trans "X2M uses it’s patent protected two-way, distributed intelligence solution to address the problems that utilities, local government and enterprise customers face in an efficient and cost effective manner. The Microengine provides flexibility in the location of the intelligence and allows remote reprogramming of the smart applications providing a future proof outcome for the customer."%}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Us -->
-        <div class="aboutUs">
-            <img src="{%static 'images/start.jpg' %}" alt="aboutUs">
-            <div>
-                <p><b>{% trans "We are emerging as a globally significant, partner and supplier to the utility industry."%}</b></p>
-                <p class="aboutUs_button"><a class="btn btn-lg btn-light" href="#"><b>{%trans "Get On Board" %}</b></a></p>
-            </div>    
+            <!--/ dropdown -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header-->
+    <header>
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-label="Slide 1"
+            aria-current="true"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+            class=""
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+            class=""
+          ></button>
         </div>
 
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-5">
-                <p class=" text-center text-white">
-                    <img src="{% static 'images/FS-home-logo.png'%}"><br>
-                    <span>Copyright &copy; X2M 2022</span>
-                </p> 
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="bd-placeholder-img w-100"
+              src="{% static 'images/tech1.jpg'%}"
+              aria-hidden="true"
+            />
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1><b>{%trans "Connecting" %}</b></h1>
+                <h1><b>{%trans "Your World" %}</b></h1>
+                <p>
+                  <a class="btn btn-lg btn-dark" href="{% url 'about_company'%}"
+                    >{%trans "More info" %}</a
+                  >
+                </p>
+              </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="bd-placeholder-img w-100"
+              src="{% static 'images/tech3.jpeg'%}"
+              aria-hidden="true"
+            />
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1><b>{%trans "Connecting" %}</b></h1>
+                <h1><b>{%trans "Your World" %}</b></h1>
+                <p>
+                  <a
+                    class="btn btn-lg btn-dark"
+                    href="{% url 'about_business'%}"
+                    >{%trans "Learn more" %}</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="bd-placeholder-img w-100"
+              src="{% static 'images/tech2.jpg'%}"
+              aria-hidden="true"
+            />
+
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1><b>{%trans "Connecting" %}</b></h1>
+                <h1><b>{%trans "Your World" %}</b></h1>
+                <p>
+                  <a class="btn btn-lg btn-dark" href="{% url 'about_product' %}"
+                    >{%trans "View our Products" %}</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Introduction section-->
+    <section class="py-5 border-bottom" id="features">
+      <div class="container px-4 my-5">
+        <div class="intro">
+          <div class="intro_image">
+            <img src="{%static 'images/intro_text.jpg'%}" alt="tech" />
+          </div>
+          <div class="intro_text">
+            <p>
+              {%trans "X2M is a technology company that uses the internet to deliver productivity improvements, cost savings and improved public safety to enterprise and government customers. X2M’s current focus is servicing the utility sector in the Asia-Pacific (APAC) utility market through the provision of technology which connects devices over the internet, such as water meters and gas pressure sensors and which enables data exchange and control of these devices. This category is commonly referred to as the Internet of Things (IoT)."%}
+            </p>
+          </div>
+        </div>
+        <div class="row intro_business py-4">
+          <div class="intro_business_text">
+            <h3><b>{% trans "In the Field"%}</b></h3>
+            <p>
+              {% trans "X2M has more than 150,000 devices connected to it’s IoT platform and distributed intelligence solution generating real-time information and control to over 37 customers in many countries and operating over multiple radio technologies. That’s proof that we offer a world class, leading edge solution that is adaptable and scalable."%}
+            </p>
+          </div>
+          <div class="intro_business_text">
+            <h3><b>{% trans "Our approach"%}</b></h3>
+            <p>
+              {% trans "X2M uses it’s patent protected two-way, distributed intelligence solution to address the problems that utilities, local government and enterprise customers face in an efficient and cost effective manner. The Microengine provides flexibility in the location of the intelligence and allows remote reprogramming of the smart applications providing a future proof outcome for the customer."%}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Us -->
+    <div class="aboutUs">
+      <img src="{%static 'images/start.jpg' %}" alt="aboutUs" />
+      <div>
+        <p>
+          <b
+            >{% trans "We are emerging as a globally significant, partner and supplier to the utility industry."%}</b
+          >
+        </p>
+        <p class="aboutUs_button">
+          <a class="btn btn-lg btn-light" href="#"
+            ><b>{%trans "Get On Board" %}</b></a
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+      <div class="container px-5">
+        <p class="text-center text-white">
+          <img src="{% static 'images/FS-home-logo.png'%}" /><br />
+          <span>Copyright &copy; X2M 2022</span>
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <!-- <script src="js/scripts.js"></script> -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
 </html>
