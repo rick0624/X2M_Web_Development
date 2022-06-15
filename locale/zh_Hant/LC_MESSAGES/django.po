@@ -38,6 +38,114 @@ msgstr "聯繫我們" # 填入對應的翻譯文字
 msgid "Language"
 msgstr "語言" # 填入對應的翻譯文字
 
+#: website/templates/website/main_page.html:71  # 對應的位置
+msgid "Connecting"
+msgstr "聯繫" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:72  # 對應的位置
+msgid "Your World"
+msgstr "您的世界" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:73  # 對應的位置
+msgid "More info"
+msgstr "更多資訊" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:83  # 對應的位置
+msgid "Learn more"
+msgstr "了解更多" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:94  # 對應的位置
+msgid "View our Products"
+msgstr "查看產品" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:114  # 對應的位置
+msgid "X2M is a technology company that uses the internet to deliver productivity improvements, cost savings and improved public safety to enterprise and government customers. X2M’s current focus is servicing the utility sector in the Asia-Pacific (APAC) utility market through the provision of technology which connects devices over the internet, such as water meters and gas pressure sensors and which enables data exchange and control of these devices. This category is commonly referred to as the Internet of Things (IoT)."
+msgstr "X2M 是一家科技公司，使用互聯網為企業和政府客戶提高生產力、節省成本並改善公共安全。 X2M 目前的重點是通過提供通過互聯網連接設備（如水錶和氣壓傳感器）並實現數據交換和控制這些設備的技術，為亞太地區 (APAC) 公用事業市場的公用事業部門提供服務。此類別通常稱為物聯網 (IoT)。" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:125  # 對應的位置
+msgid "In the Field"
+msgstr "領域成就" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:126  # 對應的位置
+msgid "X2M has more than 150,000 devices connected to it’s IoT platform and distributed intelligence solution generating real-time information and control to over 37 customers in many countries and operating over multiple radio technologies. That’s proof that we offer a world class, leading edge solution that is adaptable and scalable."
+msgstr "X2M 有超過 150,000 台設備連接到其物聯網平台和分佈式智能解決方案，為許多國家的 37 多個客戶生成實時信息和控制，並通過多種無線電技術運行。這證明我們能提供世界一流的、具有適應性和可擴展性的領先解決方案。" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:129  # 對應的位置
+msgid "Our approach"
+msgstr "效能方法" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:130  # 對應的位置
+msgid "X2M uses it’s patent protected two-way, distributed intelligence solution to address the problems that utilities, local government and enterprise customers face in an efficient and cost effective manner. The Microengine provides flexibility in the location of the intelligence and allows remote reprogramming of the smart applications providing a future proof outcome for the customer."
+msgstr "X2M 使用其受專利保護的雙向分佈式智能解決方案，以高效且具有成本效益的方式解決公用事業、地方政府和企業客戶面臨的問題。微引擎在智能定位方面提供了靈活性，並允許對智能應用程序進行遠程重新編程，從而為客戶提供面向未來的結果。" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:138  # 對應的位置
+msgid "We are emerging as a globally significant, partner and supplier to the utility industry."
+msgstr "成為全球重要合作夥伴和供應商。" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:139  # 對應的位置
+msgid "Get On Board"
+msgstr "拜訪我們" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:77  # 對應的位置
+msgid "About Us"
+msgstr "關於我們" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:83  # 對應的位置
+msgid "The APAC utility market typically uses aging analogue infrastructure in an environment of increasing population and demand for services. Utility providers and governments in the APAC region are increasingly migrating to sophisticated internet based technology solutions in search of productivity improvements, environmental sustainability, waste reduction and enhanced public safety."
+msgstr "亞太地區公用事業市場通常在人口增長和服務需求增加的環境中使用老化的模擬基礎設施。亞太地區的公用事業供應商和政府越來越多地轉向複雜的基於互聯網的技術解決方案，以尋求提高生產力、環境可持續性、減少廢物和增強公共安全的目的。" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:86  # 對應的位置
+msgid "The IoT entails connecting everyday objects to the internet so they can communicate with each other and with centralised systems (such as big data, artificial intelligence systems, machine learning, billing and control platforms and distributed systems (such as factory automation, building automation, smart parks and local safety systems). These objects range from utility related devices such as air conditioning systems, solar systems, electric vehicle charging stations, pressure sensors, as well as water, electricity and gas meters to household or industrial items such as blinds, compressors, lights and displays. Once connected to the internet, they can send and/or receive information and potentially be controlled remotely. The figure below depicts how a typical end-to-end IoT solution operates. The three different components of an IoT platform are the IoT Device, the IoT Hub, and the IoT Platform:"
+msgstr "物聯網需要將日常物品連接到互聯網，以便它們能夠相互通信並與集中式系統（如大數據、人工智能係統、機器學習、計費和控制平台以及分佈式系統（如工廠自動化、樓宇自動化、智能公園和地方安全系統）。這些對象的範圍從空調系統、太陽能係統、電動汽車充電站、壓力傳感器以及水錶、電錶和燃氣表等公用事業相關設備到百葉窗、壓縮機等家用或工業用品。 , 燈和顯示器。一旦連接到互聯網，它們就可以發送和/或接收信息，並可能被遠程控制。下圖描述了典型的端到端物聯網解決方案的運作方式。物聯網平台的三個不同組件是物聯網設備、物聯網中心和物聯網平台：" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:91  # 對應的位置
+msgid "IoT Device"
+msgstr "物聯網設備" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:92  # 對應的位置
+msgid "These are individual smart devices, either built in or added to a meter or other infrastructure item that can connect to the internet to send and receive data."
+msgstr "這些是單獨的智能設備，內置或添加到儀表或其他可以連接到互聯網以發送和接收數據的基礎設施項目。" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:95  # 對應的位置
+msgid "IoT Hub"
+msgstr "物聯網中心" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:96  # 對應的位置
+msgid "A small computing device that is located near the end smart devices. Its purpose is to collate and simplify the information received from each device and trigger local actions. Data is also sent to the central IoT platform in the cloud to trigger group actions. Some IoT devices do not make use of the IoT hub."
+msgstr "位於終端智能設備附近的小型計算設備。其目的是整理和簡化從每個設備接收到的信息並觸發本地操作。數據也被發送到雲中的中央物聯網平台以觸發群體行動。某些 IoT 設備不使用 IoT 中心。" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:99  # 對應的位置
+msgid "IoT Platform"
+msgstr "物聯網平台" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:100  # 對應的位置
+msgid "The software application that allows device, alert and user management, data collection and visualisation, application development and analytics."
+msgstr "允許設備、警報和用戶管理、數據收集和可視化、應用程序開發和分析的軟件應用程序。" # 填入對應的翻譯文字
+
+#: website/templates/website/about_company.html:101  # 對應的位置
+msgid "The IoT enables old style analogue devices to become “smart” devices delivering immediate customer benefits, as evidenced in the utility market."
+msgstr "正如公用事業市場所證明的那樣，物聯網使老式模擬設備成為“智能”設備，為客戶帶來直接利益。" # 填入對應的翻譯文字
+
+#: website/templates/website/about_business.html:81  # 對應的位置
+msgid "Business Introduction"
+msgstr "業務介紹" # 填入對應的翻譯文字
+
+#: website/templates/website/about_business.html:86  # 對應的位置
+msgid "Remote Automatic Sensing System"
+msgstr "遠程自動傳感系統" # 填入對應的翻譯文字
+
+#: website/templates/website/about_business.html:92  # 對應的位置
+msgid "Configuration"
+msgstr "配置" # 填入對應的翻譯文字
+
+#: website/templates/website/about_business.html:102  # 對應的位置
+msgid "Feature"
+msgstr "特徵" # 填入對應的翻譯文字
+
+#: website/templates/website/about_product.html:81  # 對應的位置
+msgid "Product Introduction"
+msgstr "產品介紹" # 填入對應的翻譯文字
+
 #: .\mysite\settings.py:124
 msgid "English"
 msgstr ""
