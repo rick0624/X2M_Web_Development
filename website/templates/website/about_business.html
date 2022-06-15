@@ -30,7 +30,8 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about_product'%}">{% trans "Product" %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">{% trans "Contract" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'socialMedia'%}">{% trans "News" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact'%}">{% trans "Contact" %}</a></li>
                         <!-- dropdown -->
                         {% load i18n %}
                         <form action="{% url 'set_language' %}" method="post">{% csrf_token %}

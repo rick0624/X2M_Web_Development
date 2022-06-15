@@ -31,8 +31,12 @@ msgid "Product"
 msgstr "產品內容" # 填入對應的翻譯文字
 
 #: website/templates/website/main_page.html:28  # 對應的位置
-msgid "Contract"
+msgid "Contact"
 msgstr "聯繫我們" # 填入對應的翻譯文字
+
+#: website/templates/website/main_page.html:33  # 對應的位置
+msgid "News"
+msgstr "新聞" # 填入對應的翻譯文字
 
 #: website/templates/website/main_page.html:56  # 對應的位置
 msgid "Language"
