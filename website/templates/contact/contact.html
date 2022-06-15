@@ -1,0 +1,122 @@
+{% load static %} 
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Contact Us</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
+    
+    </head>
+    
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container px-1" style="padding-left:10%;padding-right:10%;">
+                <a class="navbar-brand" href="{%url 'main_page'%}"><img src="{% static 'images/FS-home-logo.png'%}" style="width:50%;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about_company'%}">{% trans "Company" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about_business'%}">{% trans "Business" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about_product'%}">{% trans "Product" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'socialMedia'%}">{% trans "News" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact'%}">{% trans "Contact" %}</a></li>
+                        <!-- dropdown -->
+                        {% load i18n %}
+                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              {% trans "Language"%}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                <li>
+                                    <button type="submit" name="language" value="{{ language.code }}" class="dropdown-item">
+                                        {{ language.name_local }}
+                                    </button>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        <li>
+                        </form>
+                        <!--/ dropdown -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <form method="post">
+        {% csrf_token %}
+            <div class="container change"> 
+                <div class="card"> 
+                    <div class="form"> 
+                        <div class="left-side"> 
+                            <div class="top"> 
+                                <h4>Contact Information</h4> 
+                                <p>Fill up the form and our Team will get back to you within 24 hours.</p> 
+                            </div> 
+                            <div class="medium"> 
+                                <i class="fa fa-phone" style="font-size:24px"></i> 
+                                <p>+886 (02)2375-9880</p> 
+                                <i class="fa fa-envelope-o"></i> 
+                                <p>enquiry@x2mconnect.com</p> 
+                                <i class="fa fa-map-marker"></i> 
+                                <p>臺北市南港區三重路19之13號4樓411室(Freestyle Technology)</p> 
+                            </div> 
+                            
+                        </div> 
+                        <div class="right-side"> 
+                        {% if success %}
+                            <div class="alert alert-success" role="alert">Your message was sent!</div>
+                        {% endif %}
+                            <div class="card-details"> 
+                                <div class="input-group"> 
+                                    <div class="input"> 
+                                        <input  class="input" type="text" required="required" name="first_name"> 
+                                        <span>名字(First Name)</span> 
+                                    </div> 
+                                    <div class="input"> 
+                                        <input class="input" type="text" required="required" name="last_name"> 
+                                        <span>姓名(Last Name)</span> 
+                                    </div> 
+                                </div> 
+                                <div class="input-group"> 
+                                    <div class="input"> 
+                                        <input  class="input" type="text" required="required" name="email"> 
+                                        <span>電子郵件(Email)</span>
+                                    </div> 
+                                    <div class="input"> 
+                                        <input  class="input" type="text" required="required" name="phone"> 
+                                        <span>電話(Phone)</span> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        <div class="below-content"> 
+                            <div class="text-area"> 
+                                <!--這邊input改成textarea 垂直可移動-->
+                                <textarea class="input" type="text" required="required" name="message" rows="5"> </textarea>
+                                <span>訊息(Message)</span> 
+                            </div> 
+                            <div class="button"> 
+                                <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Send Message</button>
+                            </div> 
+                        </div> 
+                        </div> 
+                    </div>    
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+
