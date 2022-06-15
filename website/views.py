@@ -27,11 +27,13 @@ def about_product(request):
 def socialMedia(request):
     new_list = New.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     num_per_page = 10
+    '''
     if request.GET.get('p') != None:
             num_per_page = request.GET.get('p')
             request.session['p'] = num_per_page
     else:
         num_per_page = request.session['p']
+    '''
     paginator = Paginator(new_list, num_per_page) # Show 3 contacts per page.
     page_number = 1
     if request.GET.get('page') != None:
