@@ -173,10 +173,10 @@
               </div>
 
               <div class="title"><h2>{{ new.title }}</h2></div>
-              <div class="keyword"><p>{{ new.keyword|linebreaksbr }}</p></div>
+              <div class="keyword"><p><h6>{{ new.keyword|linebreaksbr }}</h6></p></div>
               {% if new.published_date %}
               <div class="col-4 date">
-                <time class="date"> {{ new.published_date.date }} </time>
+                <time class="date"><h6>{{ new.published_date.date }}</h6></time>
               </div>
 
               {% endif %}
@@ -190,7 +190,7 @@
               {% for new in new_list %}
               <article>
                 <div class="newBody">
-                  <div class="date">{{ new.published_date.date }}</div>
+                  <div class="date"><h6>{{ new.published_date.date }}</h6></div>
                   <a href="{% url 'new_detail' pk=new.pk %}" class="title"
                     ><div class="title">
                       <h4>{{ new.title }}</h4>
