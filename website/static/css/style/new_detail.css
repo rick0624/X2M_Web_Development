@@ -23,7 +23,7 @@ header nav ul li a {
 
 main button.btn-secondary {
   padding: 0.25vw 0.5vw;
-  margin: 2vh 6vw 1vh 6vw;
+  margin: 2vh 6vw 1vh 5vw;
   background-color: #212529;
 }
 
@@ -117,5 +117,11 @@ main div.all-content section.complementary article div.newBody a {
 
 main div.all-content section.complementary article div.newBody a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  main button.btn-secondary {
+    margin: 2vh 6vw 1vh 0vw;
+  }
 }
 /*# sourceMappingURL=new_detail.css.map */
