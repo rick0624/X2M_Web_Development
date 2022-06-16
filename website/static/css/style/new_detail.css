@@ -22,7 +22,7 @@ header nav ul li a {
 }
 
 main button.btn-secondary {
-  margin: 2rem 6rem 1rem 6rem;
+  margin: 2vh 6vw 1vh 6vw;
   background-color: #212529;
 }
 
@@ -53,7 +53,7 @@ main div.all-content div.new-content {
 }
 
 main div.all-content div.new-content section.new {
-  padding: 1.5rem;
+  padding: 1.5vw;
 }
 
 main div.all-content div.new-content section.new h6 {
@@ -71,6 +71,10 @@ main div.all-content div.new-content section.new div.date {
 main div.all-content div.new-content section.new div.newsContent p {
   padding: 10px 0px;
   font-size: 1vw;
+}
+
+main div.all-content div.new-content section.new div.newsContent h2 {
+  font-size: 2vw;
 }
 
 main div.all-content section.complementary {

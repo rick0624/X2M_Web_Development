@@ -39,7 +39,7 @@ header {
 
 main {
   button.btn-secondary {
-    margin: 2rem 6rem 1rem 6rem;
+    margin: 2vh 6vw 1vh 6vw;
     background-color: #212529;
     &:hover {
       background-color: #31373c;
@@ -66,7 +66,7 @@ main {
       margin-bottom: 2rem;
       // margin-right: 0.25rem;
       section.new {
-        padding: 1.5rem;
+        padding: 1.5vw;
         h6{
           font-size: 1vw;
         }
@@ -86,6 +86,9 @@ main {
           p {
             padding: 10px 0px;
             font-size: 1vw;
+          }
+          h2{
+            font-size: 2vw;
           }
         }
       }
