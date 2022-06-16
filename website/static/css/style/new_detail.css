@@ -44,7 +44,7 @@ main div.all-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0rem -3rem;
+  margin: 0rem -3vw;
 }
 
 main div.all-content div.new-content {
@@ -70,6 +70,7 @@ main div.all-content div.new-content section.new div.date {
 
 main div.all-content div.new-content section.new div.newsContent p {
   padding: 10px 0px;
+  font-size: 1vw;
 }
 
 main div.all-content section.complementary {

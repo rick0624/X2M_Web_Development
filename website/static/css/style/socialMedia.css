@@ -67,6 +67,7 @@ main section.newsList div table caption {
 
 main section.newsList div table th {
   text-align: center;
+  font-size: 1vw;
 }
 
 main section.newsList div table tbody th,
