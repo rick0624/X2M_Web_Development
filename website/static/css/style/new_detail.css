@@ -48,11 +48,12 @@ main div.all-content {
 }
 
 main div.all-content div.new-content {
-  background-color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 2vh;
 }
 
 main div.all-content div.new-content section.new {
+  margin: 0vh 1vh;
+  background-color: white;
   padding: 1.5vw;
 }
 
@@ -83,6 +84,7 @@ main div.all-content section.complementary {
 
 main div.all-content section.complementary h3 {
   font-size: 1.5vw;
+  margin: 1vw 0vw;
 }
 
 main div.all-content section.complementary h4 {
@@ -94,7 +96,7 @@ main div.all-content section.complementary h6 {
 }
 
 main div.all-content section.complementary article {
-  margin: 2rem 0.25rem;
+  margin: 2vw 0.25vw;
   background-color: white;
 }
 

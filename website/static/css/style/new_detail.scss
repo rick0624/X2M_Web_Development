@@ -61,12 +61,16 @@ main {
   div.all-content {
     display: flex;
     // margin: 0rem -3vw;
-
+    // padding: 0vh 5vh;
     div.new-content {
-      background-color: white;
-      margin-bottom: 2rem;
+      // background-color: rgb(241, 89, 89);
+      margin-bottom: 2vh;
+      // margin: 0vh 3vh 2vh 3vh;
       // margin-right: 0.25rem;
+      // padding: 0vw 10vw;
       section.new {
+        margin: 0vh 1vh;
+        background-color: white;
         padding: 1.5vw;
         h6{
           font-size: 1vw;
@@ -102,6 +106,7 @@ main {
       margin: 0rem 0rem 0rem 1vw;
       h3 {
         font-size: 1.5vw;
+        margin: 1vw 0vw;
       }
       h4{
         font-size: 1.5vw;
@@ -110,7 +115,7 @@ main {
         font-size: 1vw;
       }
       article {
-        margin: 2rem 0.25rem;
+        margin: 2vw 0.25vw;
         background-color: rgb(255, 255, 255);
         div.newBody {
           padding: 1rem;
