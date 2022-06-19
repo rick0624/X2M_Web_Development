@@ -85,7 +85,7 @@ header {
 }
 .aboutUs p{
     color: white;
-    font-size:30px;
+    font-size:35px;
 }
 .aboutUs .aboutUs_button {
     padding-top: 10px;
@@ -93,11 +93,44 @@ header {
 .aboutUs .aboutUs_button a{
     border: 1px solid #00b274;
     color:white;
-    font-size:25px;
+    font-size:30px;
     background-color: transparent;
 }
 .aboutUs .aboutUs_button a:hover{
     background-color: #00b274;
+}
+@media screen and (max-width:1024px) {
+    .aboutUs div {
+        position: absolute;
+        width:100%;
+        top:35%;
+        left:5%;
+    }
+    .aboutUs p{
+        font-size:25px;
+    }
+    .aboutUs .aboutUs_button a{
+        border: 1px solid #00b274;
+        color:white;
+        font-size:20px;
+        background-color: transparent;
+    }
+  }
+
+/* Videobox */
+.videobox {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.videobox iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* footer */
