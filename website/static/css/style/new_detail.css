@@ -123,7 +123,7 @@ main div.all-content section.complementary article div.newBody a:hover {
 
 @media screen and (max-width: 768px) {
   main button.btn-secondary {
-    margin: 2vh 6vw 1vh 0vw;
+    margin: 2vh 6vw 1vh 1vw;
   }
 }
 /*# sourceMappingURL=new_detail.css.map */
