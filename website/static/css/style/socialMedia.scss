@@ -126,7 +126,20 @@ main {
             font-size: 1.15vw;
           }
           td.fourty {
-            min-width: 400px;
+            min-width: 300px;
+          }
+          th.count{
+            width: 3vw;
+          }
+          td.title{
+            width: 30vw;
+          }
+          td.keyword{
+            width: 35vw;
+          }
+          td.date{
+            width: 15vw;
+            // min-width: 15vw;
           }
         }
 
@@ -179,6 +192,10 @@ main {
       div{
         margin: 0vh 0vw;
         
+      }
+      td.date{
+        // width: 15vw;
+        min-width: 15vw;
       }
     }
   }

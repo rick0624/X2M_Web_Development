@@ -164,12 +164,12 @@
                 class="clickable-row"
                 data-href="{% url 'new_detail' pk=new.pk %}"
               >
-                <th width="5%" scope="row">{{ forloop.counter|add:count }}</th>
-                <td width="35%" class="fourty">{{ new.title }}</td>
-                <td width="45%" class="fourty">
+                <th class="count" scope="row">{{ forloop.counter|add:count }}</th>
+                <td class="title fourty">{{ new.title }}</td>
+                <td class="keyword fourty">
                   {{ new.keyword|linebreaksbr }}
                 </td>
-                <td width="15%">{{ new.published_date.date }}</td>
+                <td class="date">{{ new.published_date.date }}</td>
               </tr>
               {% endfor %}
             </tbody>

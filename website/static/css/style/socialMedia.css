@@ -80,7 +80,23 @@ main section.newsList div table tbody td {
 }
 
 main section.newsList div table tbody td.fourty {
-  min-width: 400px;
+  min-width: 300px;
+}
+
+main section.newsList div table tbody th.count {
+  width: 3vw;
+}
+
+main section.newsList div table tbody td.title {
+  width: 30vw;
+}
+
+main section.newsList div table tbody td.keyword {
+  width: 35vw;
+}
+
+main section.newsList div table tbody td.date {
+  width: 15vw;
 }
 
 main section.pagination {
@@ -111,6 +127,9 @@ main section.pagination li.active a {
 @media screen and (max-width: 768px) {
   main section.newsList div {
     margin: 0vh 0vw;
+  }
+  main section.newsList td.date {
+    min-width: 15vw;
   }
 }
 /*# sourceMappingURL=socialMedia.css.map */
