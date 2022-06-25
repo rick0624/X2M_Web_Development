@@ -51,6 +51,9 @@ main section.newsList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main section.newsList .clickable-row {
@@ -59,6 +62,10 @@ main section.newsList .clickable-row {
 
 main section.newsList div {
   margin: 0rem 2vw;
+}
+
+main section.newsList div table {
+  width: 70vw;
 }
 
 main section.newsList div table caption {

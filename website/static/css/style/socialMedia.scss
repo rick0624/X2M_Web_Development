@@ -80,6 +80,7 @@ main {
 
   section.newsList {
     display: flex;
+    justify-content: center;
     .clickable-row {
       cursor: pointer;
     }
@@ -89,9 +90,12 @@ main {
     // align-items: center;
     // justify-content: center;
     div {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
       margin: 0rem 2vw;
       table {
-        // width: 50vh;
+        width: 70vw;
         // margin: 0rem 2rem;
         caption {
           // background-color: aqua;
