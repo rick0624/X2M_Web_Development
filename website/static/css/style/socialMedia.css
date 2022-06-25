@@ -16,12 +16,8 @@ body {
   left: 0;
 }
 
-header nav div.container {
-  margin: 0rem 0rem 0rem 6rem;
-}
-
 main {
-  margin: 6rem 4rem 2rem 4rem;
+  margin: 6vh 4vw 2vh 4vw;
 }
 
 main section.top {
@@ -114,7 +110,7 @@ main section.pagination li.active a {
 
 @media screen and (max-width: 768px) {
   main section.newsList div {
-    margin: 0vw -3vw;
+    margin: 0vh 0vw;
   }
 }
 /*# sourceMappingURL=socialMedia.css.map */

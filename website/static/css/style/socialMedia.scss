@@ -15,43 +15,43 @@ body {
   left: 0;
 }
 
-header {
-  // height: 20vh;
-  // // background-color: red;
-  // height: 10vh;
-  // color: white;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // div {
-  //   background-color: gray;
-  // }
-  // min-width: 500px;
-  nav {
-    // display: flex;
-    // a.navbar-brand {
-    //   // display: flex;
-    //   margin-left: -2rem;
-    //   // background-color: aqua;
-    // }
+// header {
+//   // height: 20vh;
+//   // // background-color: red;
+//   // height: 10vh;
+//   // color: white;
+//   // display: flex;
+//   // justify-content: center;
+//   // align-items: center;
+//   // div {
+//   //   background-color: gray;
+//   // }
+//   // min-width: 500px;
+//   nav {
+//     // display: flex;
+//     // a.navbar-brand {
+//     //   // display: flex;
+//     //   margin-left: -2rem;
+//     //   // background-color: aqua;
+//     // }
 
-    div.container {
-      margin: 0rem 0rem 0rem 6rem;
-      // min-width: 1000px;
-    }
-    // ul {
-    //   li {
-    //     a {
-    //       padding: 0.5rem;
-    //       font-size: larger;
-    //     }
-    //   }
-    // }
-  }
-}
+//     div.container {
+//       margin: 0rem 0rem 0rem 6rem;
+//       // min-width: 1000px;
+//     }
+//     // ul {
+//     //   li {
+//     //     a {
+//     //       padding: 0.5rem;
+//     //       font-size: larger;
+//     //     }
+//     //   }
+//     // }
+//   }
+// }
 
 main {
-  margin: 6rem 4rem 2rem 4rem;
+  margin: 6vh 4vw 2vh 4vw;
 
   section.top {
     display: flex;
@@ -177,7 +177,7 @@ main {
     section.newsList{
       // margin: 0vw;
       div{
-        margin: 0vw -3vw;
+        margin: 0vh 0vw;
         
       }
     }
