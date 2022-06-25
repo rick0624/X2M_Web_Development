@@ -5,18 +5,40 @@ header {
 }
 
 /*carousel*/
-.text-start b {
-    font-size: 4.5vw;
-}
-.text-start {
-    position: absolute;
-    top:40%;
+.carousel-item img {
+    object-fit: cover;
 }
 
+.text-start h1{
+    color: white;
+}
+
+.text-start {
+    position: absolute;
+    top:25%;
+    left: 10%;
+}
+
+@media screen and (max-width:720px) {
+    .carousel-inner {
+        height:300px;
+    }
+}
+@media screen and (min-width:720px) and (max-width:1200px) {
+    .carousel-inner{
+        height:450px;
+    }
+
+  }
+@media screen and (min-width:1200px) {
+    .carousel-inner{
+        height:600px;
+    }
+  }
+
 /*intro*/
-.intro {
-    /* display: flex; */
-    /* align-items: center; */
+.intro{
+    height: auto;
 }
 
 .intro_image {
@@ -33,11 +55,12 @@ header {
 .intro_text {
     width:60%;
     float: left;
-    padding-left: 20px;
+    padding:20px;
 }
 
 .intro_text p {
-    font-size: 2.5vw;
+    font-size: 24px;
+    line-height: 1.5;
 }
 
 .intro_business{
@@ -54,16 +77,20 @@ header {
 .intro_business_text p {
     padding-top: 30px;
     text-align: left;
-    font-size: 2.5vw;
+    font-size: 20px;
     line-height: 1.6;
     color: gray;
 }
 
-@media screen and (max-width:1024px) {
+
+@media screen and (max-width:1200px) {
     .intro_image,.intro_text,.intro_business_text {
         width: 100%;
     }
     .intro_business{
+        padding:0;
+        padding-top:20px;
+        padding-bottom: 20px;
         justify-content:left; 
     }
   }
@@ -99,7 +126,8 @@ header {
 .aboutUs .aboutUs_button a:hover{
     background-color: #00b274;
 }
-@media screen and (max-width:1024px) {
+
+@media screen and (max-width:720px) {
     .aboutUs div {
         position: absolute;
         width:100%;
@@ -107,12 +135,32 @@ header {
         left:5%;
     }
     .aboutUs p{
+        color: white;
         font-size:25px;
     }
     .aboutUs .aboutUs_button a{
         border: 1px solid #00b274;
         color:white;
         font-size:20px;
+        background-color: transparent;
+    }
+}
+
+@media screen and (min-width:720px) and (max-width:1200px) {
+    .aboutUs div {
+        position: absolute;
+        width:100%;
+        top:35%;
+        left:5%;
+    }
+    .aboutUs p{
+        color: white;
+        font-size:30px;
+    }
+    .aboutUs .aboutUs_button a{
+        border: 1px solid #00b274;
+        color:white;
+        font-size:25px;
         background-color: transparent;
     }
   }
