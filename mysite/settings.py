@@ -155,10 +155,10 @@ STATIC_ROOT = BASE_DIR / 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #contact頁面傳送email給管理者
-'''EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
-DEFAULT_FROM_EMAIL = 'will@learndjango.com'
-EMAIL_HOST = 'smtp.sendgrid.net' 
-EMAIL_HOST_USER = 'apikey' 
-EMAIL_HOST_PASSWORD = '<sendgrid_password>' 
-EMAIL_PORT = 587 
-EMAIL_USE_TLS = True '''
+# SMTP Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  #SMTP伺服器
+EMAIL_PORT = 587  #TLS通訊埠號
+EMAIL_USE_TLS = True  #開啟TLS(傳輸層安全性)
+EMAIL_HOST_USER = 'ted87940@gmail.com'  #寄件者電子郵件
+EMAIL_HOST_PASSWORD = 'fdgkxwwrzavclknq'  #Gmail應用程式的密碼
