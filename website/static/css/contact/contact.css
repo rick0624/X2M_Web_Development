@@ -335,14 +335,19 @@ textarea.input {
     padding: 1.5rem 0 0 0;
   }
 }
-
+/*350px*/
 @media (max-width: 480px) {
   .container1 {
-    padding: 4.5rem;
+    padding: 2rem; 
   }
 
   .contact-info:before {
     display: none;
+  }
+
+  .contact-info{
+    width: 90%;
+  
   }
 
   .square,
@@ -352,9 +357,12 @@ textarea.input {
 
   form,
   .contact-info {
-    padding: 1.7rem 5.6rem;
+    /* padding: 1.7rem 0.5rem;  */
+    padding-top: 1.7rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1.7rem;
   }
-
+  
   .text,
   .information,
   .social-media p {
@@ -363,6 +371,7 @@ textarea.input {
 
   .title {
     font-size: 1.15rem;
+    text-align:center;
   }
 
   .social-icons a {
@@ -381,5 +390,9 @@ textarea.input {
 
   .btn {
     padding: 0.45rem 1.2rem;
+  }
+
+  .button{
+    text-align:center;
   }
 }
